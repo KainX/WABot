@@ -1,10 +1,8 @@
 const puppeteer = require('puppeteer');
+const controller = require('./controller/start.js')
 
- export const start = async() =>{
-    const browser = await puppeteer.launch({headless: false});
-    const page = await browser.newPage();
-    await page.goto('https://web.whatsapp.com/');
-    await page.waitForSelector('._3LtPa', {visible: true});
+exports.start = (success, error) =>{
+    return controller.start(puppeteer, success, error);
 };
 
-start();
+this.start(() => console.log("cargado"), () => console.log("no cargado"));
