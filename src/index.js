@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
-const controller = require('./controller/start.js')
+const BotClient = require('./controller/BotClient.js');
+let page;
 
-exports.start = (success, error) =>{
-    return controller.start(puppeteer, success, error);
-};
+exports.BotClient = BotClient;
 
-this.start(() => console.log("cargado"), () => console.log("no cargado"));
+let client = new BotClient();
+client.on('ready', () =>{console.log("listo para iniciar sesión")});
