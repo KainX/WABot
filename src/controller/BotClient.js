@@ -18,5 +18,9 @@ module.exports = class BotClient extends EventEmitter{
         await this.page.goto(WA_PAGE);
         //await page.waitForSelector('img[src^="'+WA_PAGE+'"]', {visible: true}).then(success, error);
         this.emit("ready");
+        await this.page.waitForSelector('img[src^="'+WA_PAGE+'"]', {visible: true, timeout: 0});
+        this.emit("authenticated");
     }
+
+    
 }

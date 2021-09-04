@@ -6,3 +6,4 @@ exports.BotClient = BotClient;
 
 let client = new BotClient();
 client.on('ready', () =>{console.log("listo para iniciar sesión")});
+client.on('authenticated', () =>{console.log("Autenticado xd")});
